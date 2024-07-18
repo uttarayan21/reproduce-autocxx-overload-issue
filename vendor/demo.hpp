@@ -14,6 +14,10 @@ class Foo;
 class Demo {
 public:
   Foo *createFoo(const Bar &bar);
-  Foo *createFoo(const Bar &bar, const Baz &baz);
+  // This works
+  // Foo *createFoo(const Bar &bar,
+  //                const std::pair<std::map<int, std::shared_ptr<FooBar>>,
+  //                                std::shared_ptr<FooBar>> &baz);
+  Foo *createFoo(const Bar &bar, Baz &baz);
 };
 } // namespace DEMO
